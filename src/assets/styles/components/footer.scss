@@ -1,0 +1,246 @@
+.footer-container {
+    &__main {
+        height: 252px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    ;
+    &__text {
+        font-size: 72px;
+        font-weight: 400;
+        line-height: 72px;
+        letter-spacing: -0.72px;
+    }
+    ;
+}
+
+.footer {
+    background-image: url('../image/footer.png');
+    background-size: cover;
+    &__section {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    ;
+    &__h1 {
+        margin: 60px 0;
+        font-size: 67px;
+        font-weight: 400;
+        line-height: 72px;
+        /* Text style for "Свяжитесь" */
+        letter-spacing: -0.67px;
+    }
+    ;
+    &__p {
+        width: 830px;
+        color: #000000;
+        margin-bottom: 38px;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.5px;
+    }
+    ;
+    &__number {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: -0.3px;
+    }
+}
+
+#footer-link {
+    display: flex;
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    ;
+    li {
+        margin-bottom: 10px;
+        color: #000000;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: -0.3px;
+        list-style: none;
+    }
+    ;
+    a {
+        text-decoration: none;
+        position: relative;
+        color: black;
+        &:before {
+            content: "";
+            width: 0;
+            height: 0.15em;
+            margin-bottom: 2px;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            background: red;
+            transition: all 0.3s;
+        }
+        &:hover {
+            &:before {
+                width: 100%;
+                left: 0;
+                background: blue;
+            }
+        }
+    }
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1494px;
+    height: 217px;
+    border-radius: 108px;
+    background-color: #3867d6;
+    &__form {
+        display: contents;
+         ::placeholder {
+            color: black;
+        }
+    }
+    ;
+    &__name {
+        width: 362px;
+        height: 68px;
+        border: none;
+        outline: none;
+        margin-right: 88px;
+        text-align: center;
+        // font-family: "ND Astroneer";
+        border-radius: 34px;
+        background-color: #ffffff;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: -0.36px;
+        &:focus::-webkit-input-placeholder {
+            color: transparent
+        }
+        &:focus::-moz-placeholder {
+            color: transparent
+        }
+        &:focus:-moz-placeholder {
+            color: transparent
+        }
+        &:focus:-ms-input-placeholder {
+            color: transparent
+        }
+        &:hover {
+            border: 4px solid #000000;
+            background-color: #5460ff;
+            color: #ffffff;
+        }
+    }
+    ;
+    &__number {
+        width: 362px;
+        height: 68px;
+        outline: none;
+        border: none;
+        text-align: center;
+        // font-family: "ND Astroneer";
+        border-radius: 34px;
+        background-color: #ffffff;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 36px;
+        letter-spacing: -0.3px;
+        &:focus::-webkit-input-placeholder {
+            color: transparent
+        }
+        &:focus::-moz-placeholder {
+            color: transparent
+        }
+        &:focus:-moz-placeholder {
+            color: transparent
+        }
+        &:focus:-ms-input-placeholder {
+            color: transparent
+        }
+        &:hover {
+            border: 4px solid #000000;
+            background-color: #5460ff;
+            color: #ffffff;
+        }
+    }
+    ;
+    &__date {}
+    ;
+    &__communication {}
+    ;
+    &__button {
+        width: 253px;
+        height: 68px;
+        border-radius: 34px;
+        background-color: #ffffff;
+        font-size: 24px;
+        line-height: 72px;
+        letter-spacing: -0.24px;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        text-align: center;
+        // font-family: "ND Astroneer";
+        &:focus::-webkit-input-placeholder {
+            color: transparent
+        }
+        &:focus::-moz-placeholder {
+            color: transparent
+        }
+        &:focus:-moz-placeholder {
+            color: transparent
+        }
+        &:focus:-ms-input-placeholder {
+            color: transparent
+        }
+        &:hover {
+            background-color: #5460ff;
+            color: #ffffff;
+        }
+        &:active {
+            background-color: red;
+            color: #ffffff;
+        }
+    }
+    ;
+}
+
+.footer-contact {
+    width: 1439px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0 58px 0;
+    &__down {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 35px 35px 0 0;
+        background-color: #3867d6;
+        width: 1710px;
+        height: 99px;
+    }
+    ;
+    &__p {
+        font-size: 34px;
+        font-weight: 400;
+        line-height: 67.42px;
+        letter-spacing: -0.36px;
+        color: #ffffff;
+    }
+    img {
+        margin-top: 30px;
+    }
+}

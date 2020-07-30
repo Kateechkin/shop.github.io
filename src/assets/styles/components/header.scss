@@ -1,0 +1,154 @@
+#app {
+    font-family: 'Open Sans', sans-serif;
+    // font-family: ND Astroneer, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.header {
+    width: 100%;
+    position: absolute;
+    background: none;
+}
+
+.header-container {
+    height: 1080px;
+    background-image: url('../image/bcg.png');
+    background-size: cover;
+}
+
+.container {
+    width: 1635px;
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: #3867d6;
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, .05);
+    color: #fff;
+}
+
+.header {
+    &__logo {
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 52px;
+    }
+    ;
+    &__number {
+        display: flex;
+        padding: 42px 52px 0 0px;
+        font-family: "Trebuchet MS";
+        font-size: 24px;
+        font-weight: 100;
+        line-height: 14px;
+    }
+}
+
+#headers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    ul {
+        padding-left: 41px;
+        font-size: 28px;
+        display: flex;
+    }
+    ;
+    li {
+        font-size: 28px;
+        list-style: none;
+        padding-left: 63px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        height: 120px;
+    }
+    ;
+    .a {
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        &:before {
+            content: "";
+            width: 0;
+            height: 0.15em;
+            margin-bottom: -6px;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            background: red;
+            transition: all 0.3s;
+        }
+        &:hover {
+            &:before {
+                width: 100%;
+                left: 0;
+                background: blue;
+            }
+        }
+    }
+    ;
+}
+
+#headers>ul>li:nth-child(1) {
+    font-size: 34px;
+}
+
+.header-wrap {
+    height: 943px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-item {
+    display: block;
+    flex-direction: column;
+    width: 516px;
+    height: 480px;
+    text-align: left;
+    &__h1 {
+        color: #000000;
+        font-size: 80px;
+        font-weight: 400;
+        line-height: 72px;
+        letter-spacing: -0.8px;
+        margin-bottom: 41px;
+    }
+    ;
+    &__h2 {
+        color: #000000;
+        font-size: 58px;
+        font-weight: 400;
+        line-height: 72px;
+        letter-spacing: -0.58px;
+    }
+}
+
+.header-product {
+    width: 523px;
+    height: 548px;
+    background-image: url('../image/water.png');
+    background-size: cover;
+}
+
+#Capa_1 {
+    padding: 6px;
+    fill: white;
+    padding: 5px 3px;
+    margin-top: 3px;
+}
+
+.actives_cart {
+    display: none !important;
+}

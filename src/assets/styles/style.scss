@@ -1,0 +1,67 @@
+@import './components/fonts.scss';
+@import './components/header.scss';
+@import './components/section.scss';
+@import './components/footer.scss';
+@import './components/product.scss';
+@import './components/product-index.scss';
+@import './components/contact.scss';
+@import './components/cart.scss';
+@import './components/order.scss';
+@import './admin/admin-index.scss';
+@import './admin/menu.scss';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+// @font-face {
+//     font-family: 'ND Astroneer';
+//     src: url('~@/assets/fonts/ND Astroneer.woff2') format('woff2');
+//     src: url('~@/assets/fonts/NDAstroneer.ttf');
+//     src: url('~@/assets/fonts/ND Astroneer.woff') format('woff');
+// }
+// @font-face {
+//     font-family: 'ND Astroneer';
+//     // src: url('~@/assets/fonts/ND Astroneer.eot');
+//     // src: url('ND Astroneer.eot?#iefix') format('embedded-opentype');
+//     src: url('~@/assets/fonts/ND Astroneer.woff2') format('woff2');
+//     src: url('~@/assets/fonts/ND Astroneer.woff') format('woff');
+//     // src: url('ND Astroneer.ttf') format('truetype');
+//     src: url('~@/assets/fonts/ND Astroneer.svg#ND Astroneer') format('svg');
+//     font-weight: 400;
+//     font-style: normal;
+//     unicode-range: U+0020-2212;
+// }
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: .5s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    // font-family: ND Astroneer, Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.title {
+    font-weight: 400;
+    display: block;
+    font-size: 46px;
+}
+
+.title1 {
+    font-weight: 400;
+    height: 100px;
+    display: block;
+    font-size: 46px;
+}
+
+.main-container {
+    height: 100vh;
+}

@@ -1,0 +1,131 @@
+.container-admin {
+    padding-top: 120px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 61px;
+}
+
+.main {
+    min-height: 970px;
+    border-radius: 35px 0 0 35px;
+    background-color: #8c8c8c80;
+    &__text {
+        font-weight: 400;
+        height: 96px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 35px 0 0;
+        background-color: #bfbfbf;
+        h1 {
+            font-weight: 400;
+            color: black;
+        }
+    }
+    &__button {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        button {
+            margin: 20px;
+            // font-family: "ND Astroneer";
+            color: #000000;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 36px;
+            width: 365px;
+            height: 75px;
+            border-radius: 35px;
+            background-color: #e8e8e8;
+            border: none;
+            outline: none;
+        }
+    }
+    &__button-add {
+        input {
+            margin: 20px;
+            font-family: "ND Astroneer";
+            color: white;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 36px;
+            width: 365px;
+            height: 75px;
+            border-radius: 35px;
+            background-color: #8c8c8c;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* grid */
+    .container-admin {
+        grid-template-columns: 368px auto;
+    }
+    .container section {
+        grid-column: span 2;
+    }
+}
+
+//ДОБАВЛЕНИЕ ТОВАРА
+.form-admin {
+    display: inline-block;
+    margin-top: 35px;
+    width: 1020px;
+    height: 775px;
+    border-radius: 35px;
+    background-color: #e8e8e8;
+    &__all {
+        display: flex;
+        flex-direction: column;
+        padding: 43px 105px;
+    }
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 32px;
+    }
+    &__name {
+        color: #000000;
+        // font-family: "ND Astroneer";
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 36px;
+    }
+    &__name1 {
+        color: #000000;
+        // font-family: "ND Astroneer";
+        font-size: 30px;
+        margin-right: 10px;
+    }
+    input {
+        padding: 10px;
+        color: white;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 36px;
+        width: 365px;
+        height: 56px;
+        border-radius: 25px;
+        background-color: #8c8c8c;
+        border: none;
+        outline: none;
+    }
+    textarea {
+        padding: 10px;
+        color: white;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 36px;
+        width: 809px;
+        height: 245px;
+        border-radius: 25px;
+        background-color: #8c8c8c;
+        border: none;
+        outline: none;
+    }
+}
