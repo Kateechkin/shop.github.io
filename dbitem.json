@@ -1,19 +1,27 @@
 {
-    "products_house": [{
-            "article": 1,
-            "image": "1.png",
-            "name": "Система комплексной очистки воды (железо, марганец), ручной блок управления",
-            "price": 16000,
-            "available": true,
-            "performance": "Производительность: 500л/час"
+    "news": [{
+            "id": 1,
+            "image": "news1.png",
+            "news": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.",
+            "available": true
         },
         {
-            "article": 2,
-            "image": "2.png",
-            "name": "Cистема комплексной очистки воды, автоматический блок управления",
-            "price": 22000,
-            "available": true,
-            "performance": "Производительность: 500л/час"
+            "id": 2,
+            "image": "news2.png",
+            "news": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.",
+            "available": true
+        },
+        {
+            "id": 3,
+            "image": "news3.png",
+            "news": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.",
+            "available": true
+        },
+        {
+            "id": 4,
+            "image": "news1.png",
+            "news": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.",
+            "available": true
         }
     ]
 }

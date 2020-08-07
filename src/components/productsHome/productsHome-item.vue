@@ -1,6 +1,6 @@
 <template>
     <figure class="catalog-index-item">
-        <img :src="require('../assets/image/' + product_data.image)" alt="img" width="243" height="243">
+        <img :src="require('../../assets/image/' + product_data.image)" alt="img" width="243" height="243">
         <figcaption class="catalog-index-item__fig">
             <p class="catalog-item__name"> {{product_data.name}}</p>
             <p class="catalog-item__performance">Производительность: {{product_data.performance}} л/ч</p>

@@ -5,11 +5,12 @@
             <Cartitem  v-for="(item,index) in cart_data" :key="item.article" :cart_item_data="item"
                 @DeleteFromCart="DeleteFromCart(index)" />
         </div>
+         <router-link to="/admin/request"> <button>Добавить товар</button></router-link>
     </div>
 </template>
 
 <script>
-    import Cartitem from '@/components/cart-item'
+    import Cartitem from '@/components/cart/cart-item'
     import {
         mapActions
     } from 'vuex'

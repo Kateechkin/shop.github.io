@@ -7,8 +7,10 @@
 @import './components/contact.scss';
 @import './components/cart.scss';
 @import './components/order.scss';
+@import './components/news.scss';
 @import './admin/admin-index.scss';
 @import './admin/menu.scss';
+@import './admin/request.scss';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 // @font-face {
 //     font-family: 'ND Astroneer';
@@ -42,8 +44,8 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    // font-family: ND Astroneer, Arial, Helvetica, sans-serif;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: ND Astroneer, Arial, Helvetica, sans-serif;
     width: 100%;
     margin: 0 auto;
     min-height: 100vh;

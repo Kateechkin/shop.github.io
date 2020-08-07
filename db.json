@@ -5,6 +5,8 @@
             "name": "Система комплексной очистки воды (железо, марганец), ручной блок управления",
             "price": 16000,
             "available": true,
+            "isforhome": false,
+            "isOnIndex": true,
             "performance": "Производительность: 500л/час"
         },
         {
@@ -13,6 +15,8 @@
             "name": "Cистема комплексной очистки воды, автоматический блок управления",
             "price": 22000,
             "available": true,
+            "isforhome": false,
+            "isOnIndex": true,
             "performance": "Производительность: 500л/час"
         },
         {
@@ -21,6 +25,8 @@
             "name": "Набор картриджей для городской воды, обратного осмоса (механика, умягчение, угольный)",
             "price": 550,
             "available": true,
+            "isforhome": true,
+            "isOnIndex": true,
             "performance": ""
         }
     ]

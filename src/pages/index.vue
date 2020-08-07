@@ -14,11 +14,11 @@
     <div class="products-wrap">
     <div class=" containers">
       <h1 class="catalogh1">Продукция</h1>
-        <Catalog />
-         <router-link to="/admin/addproduct"> <button>Добавить товар</button></router-link>
+        <ProductsIndex />
+         <!-- <router-link to="/admin/addproduct"> <button>Добавить товар</button></router-link> -->
     </div>
     </div>
-   
+   <News />
     <!-- <Admin/> -->
     <!-- <Add/> -->
   </div>
@@ -27,8 +27,9 @@
 <script>
   // Импорт компонентов
 //   import Header from '@/components/header'
-import Catalog from '@/components/catalog'
+import ProductsIndex from '@/components/productsIndex/productsIndex'
 import Section from '@/components/section-main'
+import News from '@/components/news/news'
 // import Admin from '@/pages/admin-index'
 // import Add from '@/pages/addproduct'
   // import Products from '@/pages/products'
@@ -39,7 +40,7 @@ import Section from '@/components/section-main'
   export default {
     name: 'index',
     components: {
-    Section, Catalog
+    Section, ProductsIndex, News
   }
   }
 </script>

@@ -11,8 +11,8 @@
                     <img src="../assets/image/strelka.png" alt="Схема" width="59" height="37">
                 </li>
                 <li>
-                    <a href="#">Заявки</a>
-                    <img src="../assets/image/zayavka.png" alt="Схема" width="49" height="50">
+                     <router-link to="/admin/request"> <a href="#">Заявки</a> </router-link>
+                     <router-link to="/admin/request">  <img src="../assets/image/zayavka.png" alt="Схема" width="49" height="50"> </router-link>
                 </li>
                 <li>
                     <a href="#">Фотографии</a>

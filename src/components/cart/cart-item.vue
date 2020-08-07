@@ -1,6 +1,6 @@
 <template>
         <div class="cart-item-wrap">
-            <img :src="require('../assets/image/' + cart_item_data.image)" alt="img">
+            <img :src="require('../../assets/image/' + cart_item_data.image)" alt="img">
             <div class="cart-item-info">
                 <p>{{cart_item_data.name}}</p>
                 <p>Цена: {{cart_item_data.price}}</p>

@@ -2,12 +2,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 
-import Products from '../pages/products'
+// import Products from '../pages/products'
 import Index from '../pages/index'
 import Contact from '../pages/contact'
 import Order from '../pages/order'
 import Admin from '../pages/admin-index'
 import Addproduct from '../pages/addproduct'
+import Request from '../pages/request'
+import ProductsCompany from '../pages/productsCompanyPages'
+import ProductsHome from '../pages/productsHomePages'
 
 Vue.use(Router);
 
@@ -24,9 +27,21 @@ let router = new Router({
             }
         },
         {
-            path: '/product',
-            name: 'products',
-            component: Products,
+            path: '/productsCompany',
+            name: 'productsCompany',
+            component: ProductsCompany,
+            props: true,
+            isActive: false,
+            meta: {
+                showFeedback: true,
+                showCart: true,
+                showSearch: false
+            }
+        },
+        {
+            path: '/productsHome',
+            name: 'productsHome',
+            component: ProductsHome,
             props: true,
             isActive: false,
             meta: {
@@ -79,6 +94,13 @@ let router = new Router({
             props: true,
             meta: { showFeedback: false }
         },
+        {
+            path: '/admin/request',
+            name: 'request',
+            component: Request,
+            props: true,
+            meta: { showFeedback: false }
+        }
     ]
 })
 

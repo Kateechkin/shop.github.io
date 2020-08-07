@@ -33,11 +33,7 @@
 
 <script>
     // Импорт компонентов
-    // import Catalog from '@/components/catalog'
-    // import Cart from '@/components/cart'
-    //  import Cartitem from '@/components/cart-item'
-    //  import Cart from '@/components/cart'
-      import CartOrder from '@/components/cartfororder'
+      import CartOrder from '@/components/cart/cartfororder'
       import {mapActions} from 'vuex'
 
 

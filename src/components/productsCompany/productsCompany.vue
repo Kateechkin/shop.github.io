@@ -1,13 +1,16 @@
+<script>/* eslint-disable vue/no-use-v-if-with-v-for */ /* eslint-disable vue/require-v-for-key */ </script>
 <template>
     <div id="catalog-index ">
         <div class="catalog-index-wrap">
-            <CatalogIndexItem  v-for="product in PRODUCTS" :key="product.article" v-bind:product_data="product"
-                @addTocart="addTocart" />
+            <template>
+                <ProductsCompanyItem v-for="product in PRODUCTS" v-if="product.isforhome" :key="product.article" v-bind:product_data="product"
+                    @addTocart="addTocart" />
+            </template>
         </div>
     </div>
 </template>
 <script>
-    import CatalogIndexItem from '@/components/catalog-index-item'
+    import ProductsCompanyItem from '@/components/productsCompany/productsCompany-item'
     import {
         mapActions,
         mapGetters
@@ -17,11 +20,11 @@
         name: 'catalog-index',
         data() {
             return {
-
+            //  isforhome: true
             }
         },
         components: {
-            CatalogIndexItem
+            ProductsCompanyItem
         },
         computed: {
             ...mapGetters([

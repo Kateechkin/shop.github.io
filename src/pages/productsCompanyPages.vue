@@ -1,10 +1,10 @@
 <template>
     <div class="products-wrap">
         <div class="products containers">
-                <span class="title">Товары</span>
+                <span class="title">Товары для предприятий</span>
             <!-- <Cart v-if="$store.state.cart.length" :cart_data="$store.state.cart" /> -->
-            <CatalogIndex />
-            <CatalogIndexHouse />
+            <ProductsCompany />
+            <!-- <CatalogIndexHouse /> -->
         </div>
     </div>
 </template>
@@ -12,8 +12,7 @@
 
 <script>
     // Импорт компонентов
-    import CatalogIndex from '@/components/catalog-index'
-     import CatalogIndexHouse from '@/components/catalog-index-house'
+    import ProductsCompany from '@/components/productsCompany/productsCompany'
     // import Cart from '@/components/cart'
     import {
         mapGetters
@@ -27,8 +26,7 @@
             }
         },
         components: {
-            CatalogIndex,
-            CatalogIndexHouse
+            ProductsCompany
         },
         methods: {
             ShowCart() {

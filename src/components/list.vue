@@ -6,7 +6,7 @@
         </li>
         <div class="dropdown">
             <li>
-                <router-link to="product" class="new_a">Товары</router-link>
+                <router-link to="productsHome" class="new_a">Товары</router-link>
                 <svg version="1.1" width="30" height="30" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490.688 490.688"
                     style="enable-background:new 0 0 490.688 490.688;" xml:space="preserve">
@@ -21,8 +21,8 @@
                 </svg>
             </li>
             <div class="dropdown-content">
-                <a href="#" class="dropdown-content__a">Для предприятий</a>
-                <a href="#" class="dropdown-content__a">Для дома и коттеджей</a>
+             <router-link to="productsCompany" class="dropdown-content__a">Для предприятий</router-link>
+            <router-link to="productsHome" class="dropdown-content__a">Для дома и коттеджей</router-link>
             </div>
         </div>
         <li>+7 903 992 22 22</li>

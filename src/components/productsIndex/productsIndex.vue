@@ -1,14 +1,19 @@
+<script>/* eslint-disable vue/no-use-v-if-with-v-for */ /* eslint-disable vue/require-v-for-key */ </script>
 <template>
-    <div id="catalog ">
+    <div id="catalog">
         <!-- <h1 class="catalogh1">Продукция</h1> -->
         <div class="catalog-wrap">
-            <CatalogItem v-for="product in PRODUCTS" :key="product.article" v-bind:product_data="product"
-                @sendArticle="show" />
+            <ProductsIndexItem 
+            v-for="product in PRODUCTS" 
+            v-if="product.isOnIndex" 
+             :key="product.article" 
+             v-bind:product_data="product"
+             @sendArticle="show" />
         </div>
     </div>
 </template>
 <script>
-    import CatalogItem from '@/components/catalog-item'
+    import ProductsIndexItem from '@/components/productsIndex/productsIndex-item'
     import {
         mapActions,
         mapGetters
@@ -22,7 +27,7 @@
             }
         },
         components: {
-            CatalogItem
+            ProductsIndexItem
         },
         computed: {
             ...mapGetters([

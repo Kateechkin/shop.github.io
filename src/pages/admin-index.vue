@@ -5,7 +5,7 @@
             <div class="main__text">
                 <h1>Товары</h1>
             </div>
-            <CatalogIndex />
+            <ProductsHome />
             <div class="main__button" id="admin">
                 <router-link to="/admin/addproduct"> <button>Добавить товар</button></router-link>
             </div>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import CatalogIndex from '@/components/catalog-index'
+    import ProductsHome from '@/components/productsHome/productsHome'
     // import Catalog from '@/components/catalog'
     import Menu from '@/admin/menu'
     export default {
@@ -25,7 +25,7 @@
         },
         components: {
             Menu,
-            CatalogIndex
+            ProductsHome
         }
     }
 </script>

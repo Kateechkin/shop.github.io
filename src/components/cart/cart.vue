@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import Cartitem from '@/components/cart-item'
+    import Cartitem from '@/components/cart/cart-item'
     import {
         mapActions
     } from 'vuex'

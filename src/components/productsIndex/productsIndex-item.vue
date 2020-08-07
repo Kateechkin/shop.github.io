@@ -1,11 +1,10 @@
 <template>
   <div class="catalog-item">
-    <img :src="require('../assets/image/' + product_data.image)" alt="img" height="224" width="238">
+    <img :src="require('../../assets/image/' + product_data.image)" alt="img" height="224" width="238">
     <p class="catalog-item__name">Название {{product_data.name}}</p>
     <p class="catalog-item__price">Цена: {{product_data.price}}</p>
-    <router-link
-  to="/product"
-><button class="catalog-item__button" @click="sendData">Перейти к товарам</button> </router-link>
+    <router-link to="/product"><button class="catalog-item__button" @click="sendData">Перейти к товарам</button>
+    </router-link>
   </div>
 </template>
 <script>

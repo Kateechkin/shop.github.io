@@ -7,11 +7,15 @@ Vue.use(Vuex);
 let store = new Vuex.Store({
     state: {
         products: [],
-        cart: []
+        cart: [],
+        news: []
     },
     mutations: {
         SET_PRODUCTS: (state, products) => {
             state.products = products;
+        },
+        SET_NEWS: (state, news) => {
+            state.news = news;
         },
         SET_CART: (state, product) => {
             if (state.cart.length) {
@@ -35,12 +39,25 @@ let store = new Vuex.Store({
     },
     actions: {
         GET_PRODUCTS({ commit }) {
-            return axios('https://26f798955cc9.ngrok.io', {
+            return axios('http://9d34ff42efd1.ngrok.io', {
                     method: "GET"
                 })
                 .then((products) => {
                     commit('SET_PRODUCTS', products.data)
                     return products;
+                })
+                .catch((error) => {
+                    console.log(error)
+                    return error;
+                })
+        },
+        GET_NEWS({ commit }) {
+            return axios('http://9d34ff42efd1.ngrok.io', {
+                    method: "GET"
+                })
+                .then((news) => {
+                    commit('SET_NEWS', news.data)
+                    return news;
                 })
                 .catch((error) => {
                     console.log(error)
@@ -57,6 +74,9 @@ let store = new Vuex.Store({
     getters: {
         PRODUCTS(state) {
             return state.products;
+        },
+        NEWS(state) {
+            return state.news;
         },
         CART(state) {
             return state.cart;

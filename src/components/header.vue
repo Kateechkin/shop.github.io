@@ -40,7 +40,7 @@
 </template>
 <script>
     import List from '@/components/list'
-    import Cart from '@/components/cart'
+    import Cart from '@/components/cart/cart'
 
     export default {
         name: 'headers',
