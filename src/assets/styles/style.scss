@@ -1,17 +1,32 @@
-@import './components/fonts.scss';
-@import './components/header.scss';
-@import './components/section.scss';
-@import './components/footer.scss';
-@import './components/product.scss';
-@import './components/product-index.scss';
-@import './components/contact.scss';
-@import './components/cart.scss';
-@import './components/order.scss';
-@import './components/news.scss';
-@import './admin/admin-index.scss';
-@import './admin/menu.scss';
-@import './admin/request.scss';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import "./components/fonts.scss";
+@import "./components/header.scss";
+@import "./components/section.scss";
+@import "./components/footer.scss";
+@import "./components/product.scss";
+@import "./components/product-index.scss";
+@import "./components/contact.scss";
+@import "./components/cart.scss";
+@import "./components/order.scss";
+@import "./components/news.scss";
+@import "./admin/admin-index.scss";
+@import "./admin/menu.scss";
+@import "./admin/request.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,500&display=swap");
+$font-stack: "Montserrat", sans-serif;
+// @font-face {
+//     font-family: "Astroneer";
+//     src: url("~@/assets/fonts/NDAstroneer-regular.ttf");
+//     font-weight: normal;
+//     font-style: normal;
+//     unicode-range: U+0020-2212;
+// }
+
+// @font-face {
+//     font-family: "ND Astroneer";
+//     src: url("~@/assets/fonts/NDAstroneer-regular-rus.ttf");
+//     font-weight: normal;
+//     font-style: normal;
+// }
 // @font-face {
 //     font-family: 'ND Astroneer';
 //     src: url('~@/assets/fonts/ND Astroneer.woff2') format('woff2');
@@ -27,8 +42,8 @@
 //     // src: url('ND Astroneer.ttf') format('truetype');
 //     src: url('~@/assets/fonts/ND Astroneer.svg#ND Astroneer') format('svg');
 //     font-weight: 400;
-//     font-style: normal;
-//     unicode-range: U+0020-2212;
+// font-style: normal;
+// unicode-range: U+0020-2212;
 // }
 *,
 *:after,
@@ -36,16 +51,20 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 html {
     scroll-behavior: smooth;
 }
-
+a {
+    text-decoration: none;
+    color: #fff;
+}
 body {
     // font-family: 'Open Sans', sans-serif;
-    font-family: ND Astroneer, Arial, Helvetica, sans-serif;
+    // font-family: ND Astroneer, Arial sans-serif;
+    font-family: $font-stack;
     width: 100%;
     margin: 0 auto;
     min-height: 100vh;
@@ -54,16 +73,23 @@ body {
 .title {
     font-weight: 400;
     display: block;
-    font-size: 46px;
+    font-size: 35px;
+    margin: 0px 0px 50px 0px;
 }
 
 .title1 {
+    margin: 0px 0px 40px 0px;
     font-weight: 400;
-    height: 100px;
     display: block;
-    font-size: 46px;
+    font-size: 35px;
 }
 
 .main-container {
     height: 100vh;
+}
+.imgodd {
+    &:last-child {
+        max-width: 50%;
+        margin: 0px 50% 0px 0px;
+    }
 }

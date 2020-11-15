@@ -1,144 +1,115 @@
-.select-container {}
+.select-container {
+}
 
 .section-main {
     &__text {
-        /* Style for "Почему с нами удобно?" */
+        font-size: 35px;
         color: #000000;
-        font-size: 60px;
-        font-weight: 400;
-        line-height: 30px;
+        font-weight: 500;
         letter-spacing: -0.6px;
-        display: flex;
-        justify-content: flex-start;
-        margin: 67px 0 80px 126px;
+        margin: 47px 0 60px 0px;
     }
-    ;
     &__wrap {
         display: flex;
         justify-content: space-around;
     }
-    ;
     &__block {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 481px;
-        height: 307px;
+        max-width: 400px;
+        padding: 10px;
+        // height: 307px;
         box-shadow: 0 0 28px 1px rgba(56, 103, 214, 0.6);
         border: 1px solid rgba(0, 18, 255, 0.67);
         border-radius: 35px;
     }
-    ;
 }
 
 .block {
     &__h2 {
-        text-align: left;
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 36px;
-        /* Text style for "Большой оп" */
-        letter-spacing: -0.4px;
-        margin: 30px 0 19px 0;
+        width: 80%;
+        min-height: 50px;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        margin: 10px 0 19px 0;
     }
-    ;
     &__text {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
-        line-height: 36px;
-        /* Text style for "Компания р" */
+        line-height: 30px;
         letter-spacing: -0.24px;
         padding: 0 37px;
-        text-align: left;
+        text-align: center;
     }
-    ;
 }
 
-.containers {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1920px;
-    padding: 0 15px;
-}
-
-.section-body>div:nth-child(2)>p {
+.section-body > div:nth-child(2) > p {
     margin: 0px;
 }
 
 .section-body {
     display: flex;
     justify-content: space-around;
-    margin-top: 194px;
-    padding-bottom: 67px;
-    ;
+    margin: 100px 0px 67px 0px;
+
     &__block {
-        /* Style for "Как мы раб" */
-        width: 354px;
-        height: 210px;
+        max-width: 325px;
+        padding: 10px;
         box-shadow: 0 0 28px 1px rgba(56, 103, 214, 0.6);
         border: 1px solid rgba(0, 18, 255, 0.67);
         border-radius: 35px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
     }
-    ;
     &__h2 {
-        font-size: 120px;
-        font-weight: 400;
-        line-height: 36px;
-        letter-spacing: -1.2px;
+        text-align: center;
+        font-size: 80px;
+        font-weight: 500;
+        line-height: 80px;
         margin: 20px 0 0 0;
         color: rgba(0, 18, 255, 0.67);
     }
-    ;
     &__text {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 400;
         line-height: 36px;
+        text-align: center;
         letter-spacing: -0.24px;
-        margin: 0 50px;
     }
-    ;
 }
 
 .section-services {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     &__wrap {
         display: flex;
-        justify-content: space-around;
-        display: flex;
-        align-items: center;
-        margin: 50px;
-        width: 1630px;
-        height: 336px;
+        margin: 50px 0px;
+        min-height: 260px;
         box-shadow: 0 0 28px 1px rgba(56, 103, 214, 0.6);
         border-radius: 35px;
         border: 1px solid rgba(0, 18, 255, 0.16);
         background-color: #ffffff;
     }
-    ;
     &__h3 {
-        font-size: 48px;
-        font-weight: 400;
-        line-height: 14px;
-        /* Text style for "Наши услуг" */
+        font-size: 35px;
+        font-weight: 500;
         letter-spacing: -0.48px;
+        text-align: left;
     }
-    ;
-    &__block {}
-    ;
+    &__block {
+        flex: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
     &__p {
-        margin: 0 0 50px 0;
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 14px;
-        /* Text style for "Составлени" */
+        width: 80%;
+        text-align: center;
+        font-size: 26px;
+        font-weight: 600;
         letter-spacing: -0.4px;
     }
-    ;
 }

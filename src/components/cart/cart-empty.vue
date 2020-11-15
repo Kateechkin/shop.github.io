@@ -1,5 +1,5 @@
 <template>
-  <div class="cart-popup" v-show="show">
+  <div class="cart-popup">
     <div class="cart-item">
       <h3 class="cart-item__name">Корзина</h3>
       <div class="cart-item__close" @click="closecart()">
@@ -30,61 +30,27 @@
           </defs>
         </svg>
       </div>
-      <Cartitem
-        v-for="(item, index) in cart_data"
-        :key="item.article"
-        :cart_item_data="item"
-        @DeleteFromCart="DeleteFromCart(index)"
-      />
-      <div
-        class="cart-block"
-        v-if="$store.state.cart.length"
-        v-bind:class="{ active1: $store.state.cart.length }"
-      >
-        <router-link to="/order" class="cart-block__a">
-          <button class="cart-block__button">Оформить заявку</button>
-        </router-link>
+      <div class="cart-empty">
+        <p>Пока Ваша корзина пуста, но вы можете в нее что-нибудь добавить!</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Cartitem from "@/components/cart/cart-item";
-
-import { mapActions } from "vuex";
 export default {
-  name: "cart",
-  props: {
-    cart_data: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-  },
   data() {
     return {
-      show: true,
+      showEmpty: false,
     };
   },
-  components: {
-    Cartitem,
-  },
   methods: {
-    ...mapActions(["DELETE_FROM_CART"]),
-
-    DeleteFromCart(index) {
-      this.DELETE_FROM_CART(index);
-    },
-    ShowCart() {
-      if (this.show) {
-        this.show = false;
-      } else this.show = true;
-    },
     closecart() {
       this.$emit("closecart");
     },
   },
 };
 </script>
+
+<style>
+</style>

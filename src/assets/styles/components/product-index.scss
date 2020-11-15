@@ -1,15 +1,18 @@
+$font-stack: "Montserrat", sans-serif;
 .catalog-index-wrap {
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .catalog-index-item {
-    margin: 63px 41px;
+    // margin: 63px 41px;
     display: flex;
-    width: 794px;
-    height: 326px;
+    flex: 50%;
+    // margin: 0px 20px 0px 0px;
+    padding: 10px 0px;
+    // width: 794px;
+    // height: 326px;
     box-shadow: 0 0 28px 1px rgba(56, 103, 214, 0.6);
     border-radius: 35px;
     border: 1px solid rgba(0, 18, 255, 0.16);
@@ -17,36 +20,78 @@
     &__fig {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         text-align: left;
         margin: 0 0 0 40px;
     }
     img {
-        margin: 33px;
+        padding: 20px;
     }
 }
 
 .catalog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 395px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 0 28px 1px rgba(56, 103, 214, 0.6);
+    border: 1px solid rgba(0, 18, 255, 0.16);
+    border-radius: 35px;
+    &__name {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.24px;
+        line-height: 36px;
+        letter-spacing: -0.24px;
+        line-height: 48px;
+    }
+    &__info {
+        flex: 1 1 auto;
+    }
+    &__price {
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: -0.24px;
+        line-height: 36px;
+        letter-spacing: -0.24px;
+        line-height: 48px;
+        margin: 0px 30px 0px 0px;
+    }
+    &__button {
+        // font-family: "ND Astroneer";
+        width: 279px;
+        height: 39px;
+        border-radius: 19px;
+        background-color: #3867d6;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: -0.24px;
+        font-family: $font-stack;
+    }
     &__wrap {
-        justify-content: space-around;
+        // justify-content: space-around;
         display: flex;
     }
-    ;
     &__performance {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 400;
         line-height: 30px;
         /* Text style for "Производит" */
         letter-spacing: -0.22px;
     }
-    ;
     &__button2 {
         text-align: center;
         color: #ffffff;
-        // font-family: "ND Astroneer";
+        font-family: $font-stack;
         border: none;
         outline: none;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 400;
         line-height: 30px;
         letter-spacing: -0.24px;

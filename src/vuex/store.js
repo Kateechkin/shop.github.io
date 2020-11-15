@@ -20,7 +20,7 @@ let store = new Vuex.Store({
         SET_CART: (state, product) => {
             if (state.cart.length) {
                 let isProduct = false;
-                state.cart.map(function(item) {
+                state.cart.map(function (item) {
                     if (item.article === product.article) {
                         isProduct = true;
                         item.quantity++
@@ -39,9 +39,9 @@ let store = new Vuex.Store({
     },
     actions: {
         GET_PRODUCTS({ commit }) {
-            return axios('http://9d34ff42efd1.ngrok.io', {
-                    method: "GET"
-                })
+            return axios('https://e430fbd60ad0.ngrok.io/api/products', {
+                method: "GET"
+            })
                 .then((products) => {
                     commit('SET_PRODUCTS', products.data)
                     return products;
@@ -52,9 +52,9 @@ let store = new Vuex.Store({
                 })
         },
         GET_NEWS({ commit }) {
-            return axios('http://9d34ff42efd1.ngrok.io', {
-                    method: "GET"
-                })
+            return axios('https://e430fbd60ad0.ngrok.io/api/news', {
+                method: "GET"
+            })
                 .then((news) => {
                     commit('SET_NEWS', news.data)
                     return news;

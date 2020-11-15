@@ -5,6 +5,10 @@ import store from './vuex/store'
 import router from './router/router'
 
 import * as VueGoogleMaps from 'vue2-google-maps';
+import Vuelidate from 'vuelidate'
+import VueMask from 'v-mask'
+Vue.use(VueMask);
+Vue.use(Vuelidate);
 
 Vue.use(VueGoogleMaps, {
     load: {
