@@ -1,12 +1,13 @@
 $font-stack: "Montserrat", sans-serif;
 .span-error {
+    display: flex;
+    padding: 0px 0px 0px 40px;
     margin: 0px 0px 11px 0px;
     font-family: $font-stack;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 18px;
-    text-align: left;
     letter-spacing: 0.02em;
     color: #cf8a8a;
 }
@@ -27,6 +28,7 @@ $font-stack: "Montserrat", sans-serif;
         width: 100%;
         // background: transparent;
         padding: 0 5px;
+        transition: 0ms;
     }
     &__name {
         margin: 40px 0;
@@ -38,23 +40,19 @@ $font-stack: "Montserrat", sans-serif;
         border-bottom: 2px solid #adadad;
     }
     button {
-        border: none;
-        background-color: #3867d6;
-        margin: 30px 0;
-        font-size: 20px;
-        color: #fff;
-        line-height: 1.2;
-        text-transform: uppercase;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20px;
-        width: 100%;
-        height: 50px;
+        cursor: pointer;
+        width: 300px;
+        height: 60px;
+        border: 1px solid #e4e4e4;
+        background: #303030;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.02em;
+        color: #e4e4e4;
         &:hover {
             cursor: pointer;
             opacity: 0.6;
@@ -78,7 +76,7 @@ $font-stack: "Montserrat", sans-serif;
 // }
 
 .order-result {
-    max-width: 500px;
+    min-width: 100%;
 }
 
 .order {
@@ -230,16 +228,16 @@ $font-stack: "Montserrat", sans-serif;
     }
 }
 .isIndivActive {
-    background: transparent;
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid #a9a9a9;
-    border-left: 1px solid #a9a9a9;
+    background: transparent !important;
+    border-bottom: 1px solid transparent !important;
+    border-top: 1px solid black !important;
+    border-left: 1px solid black !important;
 }
 .isEntityActive {
-    background: transparent;
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid #a9a9a9;
-    border-right: 1px solid #a9a9a9;
+    background: transparent !important;
+    border-bottom: 1px solid transparent !important;
+    border-top: 1px solid black !important;
+    border-right: 1px solid black !important;
 }
 .order-form {
     &__first {
@@ -256,6 +254,7 @@ $font-stack: "Montserrat", sans-serif;
             font-size: 14px;
             line-height: 21px;
             letter-spacing: 0.03em;
+
             color: black;
             // &:hover {
             //     background: #4c4c4c;
@@ -706,20 +705,19 @@ input[type="radio"] {
             padding: 21px 25px 11px 25px;
 
             font-family: $font-stack;
+            background: #a9a9a9;
             font-style: normal;
             font-weight: 500;
             font-size: 14px;
             line-height: 21px;
             letter-spacing: 0.03em;
-
-            background: #494949;
-            color: #fff;
-            &:hover {
-                background: #4c4c4c;
-            }
-            &:focus {
-                background: #525252;
-            }
+            color: black;
+            // &:hover {
+            //     background: #4c4c4c;
+            // }
+            // &:focus {
+            //     background: #525252;
+            // }
         }
         label {
             cursor: text;
@@ -729,7 +727,7 @@ input[type="radio"] {
             font-size: 18px;
             line-height: 21px;
             letter-spacing: 0.03em;
-            color: #c6c6c6;
+            color: black;
             display: block; /* Блочный элемент */
             // padding: 22px 25px;
             text-align: left;
@@ -782,8 +780,9 @@ input[type="radio"] {
         }
     }
     &__button {
+        display: flex;
+        justify-content: flex-end;
         margin: 32px 0px 0px 36px;
-        text-align: right;
         input {
             cursor: pointer;
             width: 211px;
@@ -982,12 +981,31 @@ input[type="radio"] {
     display: block;
     transition: 0.3s ease-in-out;
 }
-.active {
+.activenone {
     display: none;
     input {
         pointer-events: none;
         background: #353535 !important;
         color: #fff !important;
+    }
+}
+.order-cart {
+    &__btn {
+        button {
+            cursor: pointer;
+            width: 211px;
+            height: 45px;
+            border: 1px solid #e4e4e4;
+            background: #303030;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: 0.02em;
+            color: #e4e4e4;
+        }
     }
 }
 @media (max-width: 1410px) {

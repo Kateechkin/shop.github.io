@@ -42,8 +42,15 @@
         v-bind:class="{ active1: $store.state.cart.length }"
       >
         <router-link to="/order" class="cart-block__a">
-          <button class="cart-block__button">Оформить заявку</button>
+          <button class="cart-block__button" @click="closecart()">
+            Оформить заявку
+          </button>
         </router-link>
+      </div>
+      <div class="cart-block__result">
+        <p>
+          Итого: <span>{{ cartTotalCost }}</span>
+        </p>
       </div>
     </div>
   </div>
@@ -70,6 +77,18 @@ export default {
   },
   components: {
     Cartitem,
+  },
+  computed: {
+    cartTotalCost() {
+      let result = [];
+      for (let item of this.cart_data) {
+        result.push(item.price * item.quantity);
+      }
+      result = result.reduce(function (sum, el) {
+        return sum + el;
+      });
+      return result;
+    },
   },
   methods: {
     ...mapActions(["DELETE_FROM_CART"]),

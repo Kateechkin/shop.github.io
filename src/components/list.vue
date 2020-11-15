@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li><router-link to="/">АкваПрайсПлюс</router-link></li>
+    <li><router-link to="/" class="logo-name">АкваПрайсПлюс</router-link></li>
     <li v-for="(link, el) in menu" :key="el.id" v-bind:item="el">
       <router-link :to="{ name: link.routerName }" class="a">{{
         link.title
@@ -8,7 +8,7 @@
     </li>
     <div class="dropdown">
       <li>
-        <router-link to="productsHome" class="new_a">Товары</router-link>
+        Товары
         <svg
           version="1.1"
           width="30"
@@ -38,15 +38,15 @@
         </svg>
       </li>
       <div class="dropdown-content">
-        <router-link to="productsCompany" class="dropdown-content__a"
+        <router-link to="forHome" class="dropdown-content__a"
           >Для предприятий</router-link
         >
-        <router-link to="productsHome" class="dropdown-content__a"
+        <router-link to="forCompany" class="dropdown-content__a"
           >Для дома и коттеджей</router-link
         >
       </div>
     </div>
-    <li>+7 903 992 22 22</li>
+    <li><a href="tel:+7(903)922-22-22" class="a">+7 903 992 22 22</a></li>
   </ul>
 </template>
 <script>

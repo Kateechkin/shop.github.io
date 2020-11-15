@@ -59,17 +59,9 @@
           <input type="text" placeholder="Искать здесь..." />
         </div>
       </form>
-      <CartEmpty
-        v-if="!$store.state.cart.length"
-        v-show="show"
-        @closecart="closecart()"
-      />
-      <Cart
-        v-if="$store.state.cart.length"
-        :cart_data="$store.state.cart"
-        v-show="show"
-        @closecart="closecart()"
-      />
+      <CartEmpty v-if="!CART.length" v-show="!show" @closecart="closecart()" />
+      <Cart v-else :cart_data="CART" v-show="!show" @closecart="closecart()" />
+      <!-- :cart_data="$store.state.cart" -->
     </div>
   </header>
 </template>

@@ -7,10 +7,17 @@ Vue.use(Vuex);
 let store = new Vuex.Store({
     state: {
         products: [],
-        cart: [],
+        production: JSON.parse(localStorage.getItem('production') || '[]'),
+
+        cart: JSON.parse(localStorage.getItem('cart') || '[]'),
         news: []
     },
     mutations: {
+
+        SET_PRODUCTION(state, production) {
+            state.production = production
+            localStorage.setItem('production', JSON.stringify(state.production))
+        },
         SET_PRODUCTS: (state, products) => {
             state.products = products;
         },
@@ -24,20 +31,31 @@ let store = new Vuex.Store({
                     if (item.article === product.article) {
                         isProduct = true;
                         item.quantity++
+                        localStorage.setItem('cart', JSON.stringify(state.cart))
                     }
                 })
                 if (!isProduct) {
                     state.cart.push(product)
+                    localStorage.setItem('cart', JSON.stringify(state.cart))
                 }
             } else {
                 state.cart.push(product)
+                localStorage.setItem('cart', JSON.stringify(state.cart))
             }
         },
         REMOVE_FROM_CART: (state, index) => {
             state.cart.splice(index, 1)
+            localStorage.setItem('cart', JSON.stringify(state.cart))
         }
     },
     actions: {
+
+        GET_PRODUCTION({
+            commit
+        }, production) {
+
+            commit('SET_PRODUCTION', production)
+        },
         GET_PRODUCTS({ commit }) {
             return axios('https://e430fbd60ad0.ngrok.io/api/products', {
                 method: "GET"
@@ -74,6 +92,10 @@ let store = new Vuex.Store({
     getters: {
         PRODUCTS(state) {
             return state.products;
+        },
+
+        PRODUCTION(state) {
+            return state.production;
         },
         NEWS(state) {
             return state.news;

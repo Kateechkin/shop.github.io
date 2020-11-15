@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <Header v-if="$route.meta.showFeedback" />
+      <Header />
       <router-view></router-view>
-      <Footer v-if="$route.meta.showFeedback" />
+      <Footer />
     </div>
   </div>
 </template>

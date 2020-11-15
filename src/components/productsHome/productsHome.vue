@@ -1,53 +1,90 @@
 <template>
+  <div class="products containers">
+    <span class="title" v-if="`${this.$route.params.path}` === 'forHome'"
+      >Товары для дома и коттеджей</span
+    >
+    <span class="title" v-if="`${this.$route.params.path}` === 'forCompany'"
+      >Товары для предприятий
+    </span>
     <div id="catalog-index ">
-        <div class="catalog-index-wrap">
-            <ProductsHomeItem  v-for="product in PRODUCTS" :key="product.article" v-bind:product_data="product"
-                @addTocart="addTocart" />
-        </div>
+      <div class="catalog-index-wrap">
+        <ProductsHomeItem
+          :class="{ imgodd: PRODUCTION.length % 2 !== 0 }"
+          v-for="product in PRODUCTION"
+          :key="product.article"
+          v-bind:product_data="product"
+          @addTocart="addTocart"
+        />
+      </div>
     </div>
+  </div>
 </template>
 <script>
-    import ProductsHomeItem from '@/components/productsHome/productsHome-item'
-    import {
-        mapActions,
-        mapGetters
-    } from 'vuex'
+import ProductsHomeItem from "@/components/productsHome/productsHome-item";
+import { mapActions, mapGetters } from "vuex";
+import axios from "axios";
 
-    export default {
-        name: 'catalog-index',
-        data() {
-            return {
+export default {
+  name: "catalog-index",
+  data() {
+    return {};
+  },
+  components: {
+    ProductsHomeItem,
+  },
+  watch: {
+    "$route.params.path"() {
+      axios
+        .get(
+          `https://e430fbd60ad0.ngrok.io/api/products/${this.$route.params.path}`,
+          {}
+        )
+        .then((response) => {
+          (this.production = response.data),
+            this.$store.dispatch("GET_PRODUCTION", this.production);
+        })
+        .catch((error) => {
+          console.log(error);
+          return error;
+        });
+    },
+  },
+  created() {
+    axios
+      .get(
+        `https://e430fbd60ad0.ngrok.io/api/products/${this.$route.params.path}`,
+        {}
+      )
+      .then((response) => {
+        (this.production = response.data),
+          this.$store.dispatch("GET_PRODUCTION", this.production);
+      })
+      .catch((error) => {
+        console.log(error);
+        return error;
+      });
+  },
+  computed: {
+    ...mapGetters(["PRODUCTION"]),
+  },
 
-            }
-        },
-        components: {
-            ProductsHomeItem
-        },
-        computed: {
-            ...mapGetters([
-                'PRODUCTS'
-            ])
-        },
-        methods: {
-            ...mapActions([
-                'GET_PRODUCTS',
-                'ADD_TO_CART'
-            ]),
+  methods: {
+    ...mapActions(["GET_PRODUCTION", "ADD_TO_CART"]),
 
-            addTocart(data) {
-                this.ADD_TO_CART(data)
-            }
-        },
-        mounted() {
-            this.GET_PRODUCTS()
-                .then((response) => {
-                    if (response.data) {
-                        console.log('Data arrived')
-                    }
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+    addTocart(data) {
+      this.ADD_TO_CART(data);
+    },
+  },
+  mounted() {
+    this.GET_PRODUCTION()
+      .then((response) => {
+        if (response.data) {
+          console.log();
         }
-    }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+};
 </script>

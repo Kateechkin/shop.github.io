@@ -30,6 +30,7 @@
                 class="footer-info__number"
                 placeholder="Ваш номер телефона"
                 id="phone"
+                v-mask="'+7(###)###-####'"
                 v-model="phone"
               />
             </div>
@@ -56,14 +57,30 @@
                   link.title
                 }}</router-link>
               </li>
+              <li>
+                <router-link to="forHome" class="a"
+                  >Продукция для предприятий</router-link
+                >
+              </li>
+              <li>
+                <router-link to="forCompany" class="a"
+                  >Продукция для дома и коттеджей</router-link
+                >
+              </li>
             </ul>
           </nav>
-          <div class="footer__number">+7 903 992 22 22</div>
-          <div class="footer__number">aquapriceplus@mail.ru</div>
+          <div class="footer__number">
+            <a href="tel:+7(903)922-22-22">+7 903 992 22 22</a>
+          </div>
+          <div class="footer__number">
+            <a href="mailto:aquapriceplus@mail.ru">aquapriceplus@mail.ru</a>
+          </div>
         </div>
       </div>
       <div class="footer-contact__down">
-        <p class="footer-contact__p">Designed by Lumerty</p>
+        <a href="http://lumerty.ru/" class="footer-contact__p"
+          >Designed by Lumerty</a
+        >
       </div>
     </div>
   </div>
@@ -87,25 +104,19 @@ export default {
         },
         // {
         //   id: 2,
-        //   routerName: "index",
-        //   title: "Наши работы",
+        //   routerName: "forCompany",
+        //   title: "Товары для дома и коттеджей",
         //   completed: false,
         // },
-        {
-          id: 3,
-          routerName: "index",
-          title: "Товары для коттеджей",
-          completed: false,
-        },
-        {
-          id: 4,
-          routerName: "index",
-          title: "Товары для компании",
-          completed: false,
-        },
+        // {
+        //   id: 3,
+        //   routerName: "forCompany",
+        //   title: "Товары для предприятий",
+        //   completed: false,
+        // },
 
         {
-          id: 5,
+          id: 4,
           routerName: "contact",
           title: "Контакты",
           completed: false,
@@ -116,7 +127,7 @@ export default {
   methods: {
     postPost() {
       axios
-        .post("https://e430fbd60ad0.ngrok.io", {
+        .post("https://e430fbd60ad0.ngrok.io/api/contacts", {
           name: this.name,
           phone: this.phone,
         })

@@ -1,6 +1,6 @@
 <template>
   <div class="order">
-    <h3 class="title1">Оформление заявки</h3>
+    <h3 class="title1">Оформление заказа</h3>
     <div class="containers">
       <div class="order-form">
         <!-- <form action="" method="POST" class="order-form"> -->
@@ -57,12 +57,7 @@
 
                 <div class="" data-tab="hello" v-if="isIndivActive">
                   <span
-                    v-if="
-                      $v.$invalid ||
-                      $v.phone.$error ||
-                      $v.name.$error ||
-                      $v.email.$error
-                    "
+                    v-if="$v.phone.$error || $v.name.$error || $v.email.$error"
                     class="span-error"
                   >
                     Данные введены некорректно
@@ -121,14 +116,12 @@
                       @click="switchTabsClass('block')"
                       :class="{
                         btnotactive:
-                          $v.$invalid ||
                           $v.phone.$error ||
                           $v.email.$error ||
                           $v.name.$error ||
                           (name.length && phone.length && email.length) === 0,
                       }"
                       :disabled="
-                        $v.$invalid ||
                         $v.phone.$error ||
                         $v.email.$error ||
                         $v.name.$error ||
@@ -138,7 +131,7 @@
                   </div>
                 </div>
                 <div class="" data-tab="world" v-if="isEntityActive">
-                  <span
+                  <!-- <span
                     v-if="
                       $v.$invalid &&
                       (name.length &&
@@ -154,10 +147,9 @@
                     class="span-error"
                   >
                     Пожалуйста, заполните все поля
-                  </span>
+                  </span> -->
                   <span
-                    v-else-if="
-                      $v.$invalid ||
+                    v-if="
                       $v.phone.$error ||
                       $v.name.$error ||
                       $v.email.$error ||
@@ -286,7 +278,6 @@
                       @click="switchTabsClass('block')"
                       :class="{
                         btnotactive:
-                          $v.$invalid ||
                           $v.phone.$error ||
                           $v.name.$error ||
                           $v.email.$error ||
@@ -307,7 +298,6 @@
                             scope.length) === 0,
                       }"
                       :disabled="
-                        $v.$invalid ||
                         $v.phone.$error ||
                         $v.name.$error ||
                         $v.email.$error ||
@@ -403,10 +393,9 @@
                     class="span-error"
                   >
                     Пожалуйста, заполните все поля
-                  </span>
+                  </span> -->
                   <span
-                    v-else-if="
-                      $v.$invalid ||
+                    v-if="
                       $v.country.$error ||
                       $v.city.$error ||
                       $v.addresspost.$error
@@ -414,7 +403,7 @@
                     class="span-error"
                   >
                     Данные введены некорректно
-                  </span> -->
+                  </span>
                   <div class="order-form__name">
                     <input
                       type="text"
@@ -459,14 +448,12 @@
                     value="Продолжить"
                     data-tab="post"
                     @click="switchTabsClass('post')"
-                  />
-                  <!-- :disabled="
+                    :disabled="
                       !answerSelected ||
                       (!selectedPick &&
                         (country.length &&
                           city.length &&
                           addresspost.length) === 0) ||
-                      $v.$invalid ||
                       $v.country.$error ||
                       $v.city.$error ||
                       $v.addresspost.$error
@@ -478,11 +465,11 @@
                           (country.length &&
                             city.length &&
                             addresspost.length) === 0) ||
-                        $v.$invalid ||
                         $v.country.$error ||
                         $v.city.$error ||
                         $v.addresspost.$error,
-                    }" -->
+                    }"
+                  />
                 </div>
               </div>
 
@@ -566,19 +553,19 @@
             <div class="order-result">
               <CartOrder
                 v-if="$store.state.cart.length"
-                :cart_data="$store.state.cart"
+                :cart_data="CART"
                 v-show="show"
               />
             </div>
           </div>
         </div>
-        <!-- <button
-          class="cart__btn"
-          :disabled="!paySelected || $v.$invalid"
+        <button
+          class="order-cart__btn"
+          :disabled="!paySelected"
           :class="{
             btnotactiveorder: !paySelected,
           }"
-          @click="
+          @mousedown="
             postPost(
               name,
               email,
@@ -595,36 +582,15 @@
               addresspost,
               post,
               pay,
-              BEFORECART,
+              CART,
               cartTotalCost
             )
           "
         >
-          Оформление заказа
-        </button> -->
+          Оформить заказ
+        </button>
         <!-- </form> -->
       </div>
-      <!-- <div class="order-container">
-        <form action="" class="order-form" >
-            <div class="order-form__wrap">
-            <p class="order-form__name">Введите имя:</p>
-            <input type="text" id="name" placeholder="Иван">
-            </div>
-            <div class="order-form__wrap">
-            <p class="order-form__name">Введите фамилию:</p>
-            <input type="text" id="surn" placeholder="Иванов">
-            </div>
-            <div class="order-form__wrap">
-            <p class="order-form__name">Введите Email:</p>
-            <input type="email" id="email" placeholder="kkk@yandex.ru" >
-            </div>
-            <div class="order-form__wrap">
-            <p class="order-form__name">Номер телефона:</p>
-            <input type="text" id="phone" placeholder="+7(***)(**)(**)" >
-            </div>
-            <button class="catalog-item__button">Оформить заказ</button>
-        </form>
-        </div> -->
     </div>
   </div>
 </template>
@@ -632,8 +598,9 @@
 <script>
 // Импорт компонентов
 import CartOrder from "@/components/cart/cartfororder";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { required, maxLength, minLength } from "vuelidate/lib/validators";
+import axios from "axios";
 
 export default {
   name: "order",
@@ -707,7 +674,7 @@ export default {
     },
     address: {
       required,
-      alphanameaddres: (val) => /^[а-яё]*$/i.test(val),
+      alphanameaddres: (val) => /^([А-Яа-яЁё\s])+([ 0-9])*$/i.test(val),
     },
     phone: {
       minLength: minLength(15),
@@ -743,6 +710,7 @@ export default {
     },
   },
   computed: {
+    ...mapGetters(["CART"]),
     answerSelected() {
       return this.post.length;
     },
@@ -755,30 +723,103 @@ export default {
 
     classObject: function () {
       return {
-        active: this.post === "pickup",
+        activenone: this.post === "pickup",
       };
     },
-    // cartTotalCost() {
-    //   if (this.BEFORECART.length) {
-    //     let result = [];
-
-    //     const pricerow = 1320;
-    //     for (let item of this.BEFORECART) {
-    //       result.push(item.price * item.section + pricerow * item.row);
-    //     }
-    //     result = result.reduce(function (sum, el) {
-    //       return sum + el;
-    //     });
-    //     return result;
-    //   } else {
-    //     const resulterr = 0;
-    //     return resulterr;
-    //   }
-    // },
+    cartTotalCost() {
+      let result = [];
+      for (let item of this.CART) {
+        result.push(item.price * item.quantity);
+      }
+      result = result.reduce(function (sum, el) {
+        return sum + el;
+      });
+      return result;
+    },
   },
 
   methods: {
     ...mapActions(["DELETE_FROM_CART"]),
+    postPost(
+      name,
+      email,
+      phone,
+      company,
+      address,
+      inn,
+      kpp,
+      bik,
+      scope,
+      country,
+      city,
+      comment,
+      addresspost,
+      post,
+      pay,
+      CART,
+      cartTotalCost
+    ) {
+      console.log(name);
+      console.log(CART, cartTotalCost);
+      if (
+        (company.length &&
+          address.length &&
+          inn.length &&
+          kpp.length &&
+          bik.length &&
+          scope.length) === 0
+      ) {
+        try {
+          let data = axios.post("https://e430fbd60ad0.ngrok.io/api/orders", {
+            name: name,
+            email: email,
+            phone: phone,
+            country: country,
+            city: city,
+            addresspost: addresspost,
+            post: post,
+            pay: pay,
+            product: CART,
+            price: cartTotalCost,
+          });
+          if (data.status == "success") {
+            console.log("Data deliveried");
+          } else {
+            throw new Error(data.status);
+          }
+        } catch (e) {
+          this.error = e;
+        }
+      } else {
+        try {
+          let data = axios.post("https://e430fbd60ad0.ngrok.io/api/orders", {
+            name: name,
+            email: email,
+            phone: phone,
+            company: company,
+            address: address,
+            inn: inn,
+            kpp: kpp,
+            bik: bik,
+            scope: scope,
+            country: country,
+            city: city,
+            addresspost: addresspost,
+            post: post,
+            pay: pay,
+            product: CART,
+            price: cartTotalCost,
+          });
+          if (data.status == "success") {
+            console.log("Data deliveried");
+          } else {
+            throw new Error(data.status);
+          }
+        } catch (e) {
+          this.error = e;
+        }
+      }
+    },
     switchTabs(tab) {
       if (tab === "individual") {
         this.isIndivActive = true;
