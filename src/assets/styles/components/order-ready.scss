@@ -1,0 +1,144 @@
+.order-ready {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &__svg {
+      margin: 150px 0px 0px 0px;
+   }
+
+   &__info {
+      margin: 38px 0px 35px 0px;
+   }
+
+   &__info-first {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 146.4%;
+      /* or 35px */
+      text-align: center;
+      letter-spacing: 0.03em;
+
+      color: black;
+   }
+
+   &__info-second {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 146.4%;
+      /* or 35px */
+      text-align: center;
+      letter-spacing: 0.03em;
+
+      color: black;
+   }
+
+   &__thank {
+      margin: 0px 0px 51px 0px;
+      p {
+         font-style: normal;
+         font-weight: 500;
+         font-size: 40px;
+         line-height: 47px;
+
+         text-align: center;
+         letter-spacing: 0.03em;
+
+         color: black;
+      }
+   }
+}
+.breadcrumbs-ready {
+   text-align: center;
+   margin: 0px 0px 51px 0px;
+   a {
+      margin: 0px 15px 0px 0px;
+
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: 0.02em;
+      color: black;
+      position: relative;
+      &::after {
+         content: " ";
+         position: absolute;
+         bottom: 6px;
+         right: -15px;
+         width: 6px;
+         height: 6px;
+         border-top: 1px solid black;
+         border-right: 1px solid black;
+         transform: rotate(45deg);
+      }
+   }
+}
+@media (max-width: 1440px) {
+   .order-ready {
+      svg {
+         width: 135px;
+         height: 135px;
+      }
+      &__info {
+         margin: 39px 0px 22px 0px;
+      }
+      &__info-first {
+         margin: 0px 0px 12px 0px;
+         font-size: 18px;
+      }
+      &__info-second {
+         font-size: 18px;
+      }
+      &__thank {
+         margin: 0px 0px 37px 0px;
+         p {
+            font-size: 30px;
+         }
+      }
+   }
+   .breadcrumbs-ready {
+      a {
+         font-size: 14px;
+         &::after {
+            bottom: 4px;
+            right: -11px;
+            width: 5px;
+            height: 5px;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            transform: rotate(45deg);
+         }
+      }
+   }
+}
+@media (max-width: 1024px) {
+   .order-ready {
+      svg {
+         width: 85px;
+         height: 85px;
+      }
+      &__info {
+         margin: 39px 0px 34px 0px;
+      }
+      &__info-first {
+         margin: 0px 0px 8px 0px;
+         font-size: 15px;
+         line-height: 146.4%;
+      }
+      &__info-second {
+         max-width: 312px;
+         margin: 0 auto;
+         font-size: 15px;
+         line-height: 146.4%;
+      }
+      &__thank {
+         margin: 0px 0px 47px 0px;
+         p {
+            font-size: 18px;
+            line-height: 21px;
+         }
+      }
+   }
+}

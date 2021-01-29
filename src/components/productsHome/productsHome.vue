@@ -1,9 +1,9 @@
 <template>
   <div class="products containers">
-    <span class="title" v-if="`${this.$route.params.path}` === 'forHome'"
+    <span class="title" v-if="`${this.$route.params.path}` === 'forhome'"
       >Товары для дома и коттеджей</span
     >
-    <span class="title" v-if="`${this.$route.params.path}` === 'forCompany'"
+    <span class="title" v-if="`${this.$route.params.path}` === 'forcompany'"
       >Товары для предприятий
     </span>
     <div id="catalog-index ">
@@ -11,7 +11,7 @@
         <ProductsHomeItem
           :class="{ imgodd: PRODUCTION.length % 2 !== 0 }"
           v-for="product in PRODUCTION"
-          :key="product.article"
+          :key="product.id"
           v-bind:product_data="product"
           @addTocart="addTocart"
         />
@@ -36,7 +36,7 @@ export default {
     "$route.params.path"() {
       axios
         .get(
-          `https://e430fbd60ad0.ngrok.io/api/products/${this.$route.params.path}`,
+          `https://a863bbb770d2.ngrok.io/api/products/${this.$route.params.path}`,
           {}
         )
         .then((response) => {
@@ -52,7 +52,7 @@ export default {
   created() {
     axios
       .get(
-        `https://e430fbd60ad0.ngrok.io/api/products/${this.$route.params.path}`,
+        `https://a863bbb770d2.ngrok.io/api/products/${this.$route.params.path}`,
         {}
       )
       .then((response) => {

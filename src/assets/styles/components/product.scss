@@ -13,3 +13,16 @@
     justify-content: space-around;
     margin: 50px;
 }
+@media (max-width: 1440px) {
+    .products {
+        padding: 155px 20px 0 20px;
+    }
+}
+@media (max-width: 540px) {
+    .catalogh1 {
+        margin: 32px 0 43px 0px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 120%;
+    }
+}

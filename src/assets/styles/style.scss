@@ -3,6 +3,7 @@
 @import "./components/section.scss";
 @import "./components/footer.scss";
 @import "./components/product.scss";
+@import "./components/order-ready.scss";
 @import "./components/product-index.scss";
 @import "./components/contact.scss";
 @import "./components/cart.scss";
@@ -76,7 +77,25 @@ body {
     font-size: 35px;
     margin: 0px 0px 50px 0px;
 }
+@media (max-width: 540px) {
+    .title {
+        margin: 0px 0px 20px 0px;
 
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 110.4%;
+        color: #000000;
+    }
+}
+.hidden {
+    overflow: hidden;
+}
+input {
+    outline: none;
+}
+button {
+    outline: none;
+}
 .title1 {
     margin: 0px 0px 40px 0px;
     font-weight: 400;

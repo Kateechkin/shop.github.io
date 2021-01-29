@@ -1,8 +1,8 @@
 $font-stack: "Montserrat", sans-serif;
 .cart-item {
     position: relative;
-    background: #3967d6;
-
+    background: white;
+    box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.15);
     color: white;
     box-sizing: border-box;
     min-height: 200px;
@@ -10,7 +10,7 @@ $font-stack: "Montserrat", sans-serif;
     max-width: 700px;
     border-radius: 10px;
     &__name {
-        color: white;
+        color: black;
         padding: 20px;
         margin-bottom: 20px;
         text-align: center;
@@ -65,6 +65,7 @@ $font-stack: "Montserrat", sans-serif;
         padding: 10px;
     }
     p {
+        color: black;
         margin-bottom: 10px;
         text-align: center;
         line-height: 20px;
@@ -76,7 +77,7 @@ $font-stack: "Montserrat", sans-serif;
     background-color: transparent;
     color: black;
     box-sizing: border-box;
-    padding: 20px 0px;
+    border-bottom: 1px solid #9c9c9c;
 
     &__name {
         p {
@@ -214,17 +215,17 @@ $font-stack: "Montserrat", sans-serif;
 
 .cart-item-button-del {
     cursor: pointer;
-    color: black;
-    // font-family: "ND Astroneer";
-    font-size: 24px;
-    font-weight: 100;
-    border: none;
-    outline: none;
-    letter-spacing: -0.24px;
-    width: 40px;
-    height: 40px;
-    border-radius: 2px;
-    background-color: white;
+    // color: black;
+    // // font-family: "ND Astroneer";
+    // font-size: 24px;
+    // font-weight: 100;
+    // border: none;
+    // outline: none;
+    // letter-spacing: -0.24px;
+    // width: 40px;
+    // height: 40px;
+    // border-radius: 2px;
+    // background-color: white;
     margin: 20px;
 }
 
@@ -261,24 +262,26 @@ $font-stack: "Montserrat", sans-serif;
         width: 235px;
         height: 45px;
         border-radius: 19px;
-        background-color: #fff;
+        background-color: #3967d6;
+
         cursor: pointer;
         border: none;
         outline: none;
-        color: black;
-        font-size: 24px;
+        color: #fff;
+        font-size: 21px;
         font-weight: 400;
         line-height: 36px;
         letter-spacing: -0.24px;
     }
     &__result {
-        background: white;
+        background: #3967d6;
         height: 60px;
-        color: black;
+        color: white;
         display: flex;
         justify-content: center;
         align-items: center;
         border: 1px solid black;
+        border-radius: 0px 0px 10px 10px;
     }
 }
 
@@ -338,5 +341,30 @@ $font-stack: "Montserrat", sans-serif;
         letter-spacing: -0.24px;
         line-height: 36px;
         letter-spacing: -0.24px;
+        color: black;
+    }
+}
+@media (max-width: 1440px) {
+    .cart-item-button {
+        display: none;
+    }
+    .cart-item-order {
+        &__allprice {
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+    .cart-order {
+        &__price {
+            p {
+                font-size: 16px;
+            }
+        }
+        &__quantity {
+            p {
+                font-size: 16px;
+            }
+        }
     }
 }

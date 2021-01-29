@@ -6,7 +6,9 @@
           <p class="header-item__h1">Водоочистное оборудование</p>
           <p class="header-item__h2">Услуги по установке и бурению скважин</p>
         </div>
-        <div class="header-product"></div>
+        <div class="header-product">
+          <img src="../assets/image/water.png" alt="Оборудование" />
+        </div>
       </div>
     </div>
     <Section />

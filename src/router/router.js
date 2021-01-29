@@ -9,6 +9,7 @@ import Order from '../pages/order'
 import Admin from '../pages/admin-index'
 import Addproduct from '../pages/addproduct'
 import Request from '../pages/request'
+import OrderReary from '../pages/order-ready'
 // import ProductsCompany from '../pages/productsCompanyPages'
 import ProductsHome from '../pages/productsHomePages'
 
@@ -27,8 +28,8 @@ let router = new Router({
         component: Index,
         props: true,
         meta: {
-            showSearch: true,
-            showCart: false
+            showSearch: false,
+            showCart: true
         }
     },
     {
@@ -93,7 +94,7 @@ let router = new Router({
         props: true,
         meta: {
 
-            showSearch: true
+            showSearch: false
         }
 
         // children: [{
@@ -102,6 +103,14 @@ let router = new Router({
         //     component: Addproduct,
         //     // props: true
         // }]
+    },
+    {
+        path: '/order/ready',
+        name: 'ready',
+        component: OrderReary,
+        meta: {
+            showSearch: false
+        }
     },
     {
         path: '/admin/addproduct',

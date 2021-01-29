@@ -6,13 +6,13 @@
     <!-- <h1 class="catalogh1">Продукция</h1> -->
     <div class="catalog-wrap">
       <ProductsIndexItem
-        v-for="product in PRODUCTS.slice(2, 6)"
-        v-if="product.isonindex"
+        v-for="product in PRODUCTS"
         :key="product.article"
         v-bind:product_data="product"
         @sendArticle="show"
       />
     </div>
+    <!-- v-for="product in PRODUCTS.slice(0, 1)" -->
   </div>
 </template>
 <script>

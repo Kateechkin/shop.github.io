@@ -38,10 +38,10 @@
         </svg>
       </li>
       <div class="dropdown-content">
-        <router-link to="forHome" class="dropdown-content__a"
+        <router-link to="forhome" class="dropdown-content__a"
           >Для предприятий</router-link
         >
-        <router-link to="forCompany" class="dropdown-content__a"
+        <router-link to="forcompany" class="dropdown-content__a"
           >Для дома и коттеджей</router-link
         >
       </div>

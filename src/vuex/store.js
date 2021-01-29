@@ -46,7 +46,12 @@ let store = new Vuex.Store({
         REMOVE_FROM_CART: (state, index) => {
             state.cart.splice(index, 1)
             localStorage.setItem('cart', JSON.stringify(state.cart))
-        }
+        },
+        REMOVEALL_FROM_CART(state) {
+            state.cart = []
+            localStorage.setItem('cart', JSON.stringify(state.cart));
+
+        },
     },
     actions: {
 
@@ -57,7 +62,7 @@ let store = new Vuex.Store({
             commit('SET_PRODUCTION', production)
         },
         GET_PRODUCTS({ commit }) {
-            return axios('https://e430fbd60ad0.ngrok.io/api/products', {
+            return axios('https://a863bbb770d2.ngrok.io/api/index', {
                 method: "GET"
             })
                 .then((products) => {
@@ -70,7 +75,7 @@ let store = new Vuex.Store({
                 })
         },
         GET_NEWS({ commit }) {
-            return axios('https://e430fbd60ad0.ngrok.io/api/news', {
+            return axios('https://a863bbb770d2.ngrok.io/api/news', {
                 method: "GET"
             })
                 .then((news) => {
@@ -87,7 +92,11 @@ let store = new Vuex.Store({
         },
         DELETE_FROM_CART({ commit }, index) {
             commit('REMOVE_FROM_CART', index)
-        }
+        },
+        DELETEALL_FROM_CART({ commit }) {
+            commit('REMOVEALL_FROM_CART')
+
+        },
     },
     getters: {
         PRODUCTS(state) {
