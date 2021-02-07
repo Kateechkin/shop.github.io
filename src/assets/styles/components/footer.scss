@@ -5,10 +5,10 @@
         align-items: center;
     }
     &__text {
-        margin: 40px 0px;
-        font-size: 45px;
+        margin: 92px 0px 85px 0px;
+        font-size: 60px;
         font-weight: bold;
-        letter-spacing: -0.72px;
+        line-height: 120%;
     }
 }
 
@@ -27,12 +27,11 @@
         display: flex;
     }
     &__h1 {
-        margin: 60px 0;
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 72px;
+        margin: 143px 0px 54px 0px;
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 120%;
         /* Text style for "Свяжитесь" */
-        letter-spacing: -0.67px;
     }
     &__p {
         margin: 36px;
@@ -40,14 +39,16 @@
         color: #000000;
         font-size: 28px;
         text-align: center;
-        font-weight: 400;
+        font-weight: 600;
         line-height: normal;
         letter-spacing: 0.5px;
     }
     &__number {
         display: flex;
+        align-items: center;
+        font-weight: 600;
         &:first-child {
-            margin: 0px 30px 0px 0px;
+            padding: 0px 140px 0px 0px;
         }
         font-size: 24px;
         line-height: 120%;
@@ -122,55 +123,64 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    padding: 70px 0px;
-    border-radius: 108px;
-    background-color: #3867d6;
+
+    padding: 67px 0px;
+    background: #3967d6;
+    border-radius: 80px;
     &__form {
-        display: contents;
+        padding: 0px 50px;
+        display: flex;
+        width: 100%;
         ::placeholder {
             color: black;
         }
     }
     &__name {
-        width: 362px;
+        width: 329px;
         height: 68px;
         border: none;
         outline: none;
-        margin-right: 88px;
+        margin-right: 61px;
+
+        border: 3px solid #ffffff;
+
+        box-sizing: border-box;
+        border-radius: 80px;
+        background-color: transparent;
         text-align: center;
-        // font-family: "ND Astroneer";
-        border-radius: 34px;
-        background-color: #ffffff;
+        color: white;
         font-size: 22px;
         font-weight: 500;
         line-height: 30px;
         letter-spacing: -0.36px;
-
-        &:hover {
-            border: 2px solid #000000;
-
-            color: black;
+        &::placeholder {
+            color: white;
+        }
+        &:active {
+            color: white;
         }
     }
     &__number {
-        width: 362px;
+        width: 329px;
         height: 68px;
         outline: none;
         border: none;
         text-align: center;
-        // font-family: "ND Astroneer";
-        border-radius: 34px;
-        background-color: #ffffff;
+
+        border: 3px solid #ffffff;
+        color: #fff;
+        box-sizing: border-box;
+        border-radius: 80px;
+        background-color: transparent;
         font-size: 22px;
         font-weight: 500;
         line-height: 36px;
         letter-spacing: -0.3px;
-
-        &:hover {
-            border: 2px solid #000000;
-            transition: 0ms;
-            color: black;
+        &::placeholder {
+            color: white;
+        }
+        &:active {
+            color: white;
         }
     }
     input {
@@ -179,12 +189,14 @@
     &__communication {
     }
     &__button {
-        width: 253px;
+        width: 329px;
         height: 68px;
         border-radius: 34px;
         background-color: #ffffff;
         font-size: 20px;
+        -webkit-appearance: none;
         line-height: 72px;
+        margin-left: 71px;
         letter-spacing: -0.24px;
         outline: none;
         cursor: pointer;
@@ -193,11 +205,11 @@
         // font-family: "ND Astroneer";
 
         &:hover {
-            background: #a9a9a9;
+            background: #d1d1d1;
             color: black;
         }
         &:active {
-            background: #a9a9a9;
+            background: #d1d1d1;
             color: #ffffff;
             transition: 0ms;
         }
@@ -207,11 +219,12 @@
 .footer-contact {
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-around;
     padding: 45px 0px;
     img {
-        width: 137px;
-        height: 184px;
+        // width: 137px;
+        // height: 184px;
     }
     &__down {
         display: flex;
@@ -224,11 +237,49 @@
     }
     &__p {
         cursor: pointer;
-        font-size: 34px;
+        font-size: 20px;
         font-weight: 400;
         line-height: 67.42px;
         letter-spacing: -0.36px;
         color: #ffffff;
+    }
+}
+@media (max-width: 1440px) {
+    .footer-container {
+        &__text {
+            margin: 62px 0px 55px 0px;
+            font-size: 45px;
+        }
+    }
+    .footer-info {
+        &__form {
+            flex-direction: column;
+        }
+        &__date {
+            margin: 0px 0px 40px 0px;
+        }
+        &__communication {
+            display: flex;
+            justify-content: center;
+            input {
+                margin: 0px;
+            }
+        }
+    }
+    .footer {
+        &__h1 {
+            margin: 100px 0px 44px 0px;
+            font-size: 45px;
+        }
+        p {
+            font-size: 24px;
+        }
+        &__number {
+            font-size: 18px;
+            &:first-child {
+                padding: 0px 50px 0px 0px;
+            }
+        }
     }
 }
 @media (max-width: 1140px) {
@@ -277,6 +328,7 @@
             margin: 15px 0px 17px 0px;
             font-size: 24px;
             line-height: 120%;
+            color: black;
         }
     }
 
@@ -286,12 +338,13 @@
             font-weight: 600;
             font-size: 22px;
             line-height: 120%;
+            color: black;
         }
         &__p {
             max-width: 256px;
             margin: 0px 0px 38px 0px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 14px !important;
             line-height: 120%;
         }
         &__block-number {

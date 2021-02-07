@@ -4,12 +4,20 @@
       :src="require('../../assets/image/' + cart_item_data.image)"
       alt="img"
     />
-    <div class="cart-item-info">
-      <p>{{ cart_item_data.name }}</p>
-      <p>Цена: {{ cart_item_data.price }}</p>
-      <!-- <p>{{cart_item_data.article}}</p> -->
+    <div class="cart-item-wrap__wrap">
+      <div class="cart-item-info">
+        <p class="cart-item-info__name">{{ cart_item_data.name }}</p>
+        <p class="cart-item-info__price">
+          Цена: <span> {{ cart_item_data.price }}</span>
+        </p>
+        <!-- <p>{{cart_item_data.article}}</p> -->
+      </div>
+      <div class="cart_item_quantity">
+        Кол-во: <span>{{ cart_item_data.quantity }}</span>
+      </div>
+      <div class="cart-item-del" @click="DeleteFromCart"><p>Удалить</p></div>
     </div>
-    <div class="cart_item_quantity">Кол-во: {{ cart_item_data.quantity }}</div>
+
     <svg
       width="20"
       height="20"

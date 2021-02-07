@@ -86,6 +86,11 @@
     background-color: #949494;
 }
 .logo-name {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    padding: 0px;
+    font-weight: bold;
     color: #fff;
 }
 .dropdown {
@@ -197,5 +202,10 @@
     &:hover {
         // color: red;
         // background-color: #fff;
+    }
+}
+@media (max-width: 1024px) {
+    .logo-name {
+        display: none;
     }
 }

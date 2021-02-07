@@ -673,6 +673,7 @@ input[type="radio"] {
     -moz-appearance: none;
     appearance: none;
     width: 0px;
+    height: 0px;
     visibility: hidden;
 }
 .order-post {
@@ -1310,7 +1311,7 @@ input[type="radio"] {
         left: 2px;
         position: absolute;
 
-        background-color: #ffffff;
+        background-color: #3967d6;
         content: "";
         display: inline-block;
         visibility: visible;
@@ -1564,7 +1565,8 @@ input[type="radio"] {
             label {
                 font-size: 15px;
                 &:first-child {
-                    margin: 0px 0px 0px 46px;
+                    text-align: left;
+                    margin: 6px 0px 0px 46px;
                 }
             }
             p {
@@ -1599,13 +1601,16 @@ input[type="radio"] {
         height: 20px;
     }
     input[type="radio"]:checked:after {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
     }
 }
 @media (max-width: 540px) {
     .nav-a {
         height: 34px;
+    }
+    .order-post__radio p {
+        margin: 10px 0px 30px 52px;
     }
 }
 @media (max-width: 380px) {

@@ -1,10 +1,12 @@
 <template>
   <div id="index">
     <div class="header-container">
-      <div class="header-wrap containers">
+      <div class="header-wrap">
         <div class="header-item">
-          <p class="header-item__h1">Водоочистное оборудование</p>
-          <p class="header-item__h2">Услуги по установке и бурению скважин</p>
+          <div class="header-item__block">
+            <p class="header-item__h1">Водоочистное оборудование</p>
+            <p class="header-item__h2">Услуги по установке и бурению скважин</p>
+          </div>
         </div>
         <div class="header-product">
           <img src="../assets/image/water.png" alt="Оборудование" />

@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li><router-link to="/" class="logo-name">АкваПрайсПлюс</router-link></li>
+    <!-- <li><router-link to="/" class="logo-name">АкваПрайсПлюс</router-link></li> -->
     <li v-for="(link, el) in menu" :key="el.id" v-bind:item="el">
       <router-link :to="{ name: link.routerName }" class="a">{{
         link.title
@@ -46,7 +46,6 @@
         >
       </div>
     </div>
-    <li><a href="tel:+7(903)922-22-22" class="a">+7 903 992 22 22</a></li>
   </ul>
 </template>
 <script>

@@ -28,7 +28,7 @@ let store = new Vuex.Store({
             if (state.cart.length) {
                 let isProduct = false;
                 state.cart.map(function (item) {
-                    if (item.article === product.article) {
+                    if (item.id === product.id) {
                         isProduct = true;
                         item.quantity++
                         localStorage.setItem('cart', JSON.stringify(state.cart))
@@ -62,7 +62,7 @@ let store = new Vuex.Store({
             commit('SET_PRODUCTION', production)
         },
         GET_PRODUCTS({ commit }) {
-            return axios('https://a863bbb770d2.ngrok.io/api/index', {
+            return axios('https://8c585af28b90.ngrok.io/api/index', {
                 method: "GET"
             })
                 .then((products) => {
@@ -75,7 +75,7 @@ let store = new Vuex.Store({
                 })
         },
         GET_NEWS({ commit }) {
-            return axios('https://a863bbb770d2.ngrok.io/api/news', {
+            return axios('https://8c585af28b90.ngrok.io/api/news', {
                 method: "GET"
             })
                 .then((news) => {

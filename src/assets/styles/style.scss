@@ -71,12 +71,18 @@ body {
     min-height: 100vh;
 }
 
+input,
+textarea,
+select {
+    -webkit-appearance: none;
+}
 .title {
     font-weight: 400;
     display: block;
     font-size: 35px;
     margin: 0px 0px 50px 0px;
 }
+
 @media (max-width: 540px) {
     .title {
         margin: 0px 0px 20px 0px;
@@ -92,15 +98,20 @@ body {
 }
 input {
     outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
 }
 button {
     outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
 }
+
 .title1 {
     margin: 0px 0px 40px 0px;
-    font-weight: 400;
+    font-weight: bold;
     display: block;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 .main-container {
@@ -114,4 +125,17 @@ button {
 }
 .cursore-none {
     cursor: initial;
+}
+@media (max-width: 1440px) {
+    .title1 {
+        font-size: 35px;
+    }
+}
+@media (max-width: 800px) {
+    .imgodd {
+        &:last-child {
+            max-width: initial;
+            margin: 0px;
+        }
+    }
 }

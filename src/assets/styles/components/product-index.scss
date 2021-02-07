@@ -17,10 +17,9 @@ $font-stack: "Montserrat", sans-serif;
     padding: 10px 0px;
     // width: 794px;
     // height: 326px;
-    box-shadow: 0 0 28px 1px rgba(56, 103, 214, 0.6);
-    border-radius: 35px;
-    border: 1px solid rgba(0, 18, 255, 0.16);
-    background-color: #ffffff;
+    background: #ffffff;
+    box-shadow: 0px 0px 50px rgba(85, 85, 85, 0.15);
+    border-radius: 30px;
     &__fig {
         display: flex;
         flex-direction: column;
@@ -40,10 +39,14 @@ $font-stack: "Montserrat", sans-serif;
     max-width: 395px;
     height: 600px;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 28px 1px rgba(56, 103, 214, 0.6);
-    border: 1px solid rgba(0, 18, 255, 0.16);
-    border-radius: 35px;
+    margin: 0px 0px 20px 0px;
+    background: #ffffff;
+    box-shadow: 0px 0px 50px rgba(85, 85, 85, 0.15);
+    border-radius: 30px;
+    // background-color: #fff;
+    // box-shadow: 0 0 28px 1px rgba(56, 103, 214, 0.6);
+    // border: 1px solid rgba(0, 18, 255, 0.16);
+    // border-radius: 35px;
     &__name {
         font-size: 18px;
         font-weight: 600;
@@ -68,7 +71,7 @@ $font-stack: "Montserrat", sans-serif;
         cursor: pointer;
         width: 279px;
         height: 39px;
-        border-radius: 19px;
+        border-radius: 20px;
         background-color: #3867d6;
         border: none;
         outline: none;
@@ -107,6 +110,35 @@ $font-stack: "Montserrat", sans-serif;
         background-color: #3867d6;
     }
 }
+@media (max-width: 1440px) {
+    .catalog-index-item {
+        width: 100%;
+
+        padding: 0px 20px;
+        flex-direction: column;
+        align-items: center;
+
+        &__fig {
+            flex: 1 1 auto;
+            width: 100%;
+            margin: 0px;
+        }
+    }
+
+    .catalog-column {
+        display: flex;
+    }
+    .catalog-item {
+        &__wrap {
+            align-items: center;
+            flex-direction: column;
+            margin: 0px 0px 20px 0px;
+        }
+        &__price {
+            margin: 0px;
+        }
+    }
+}
 @media (max-width: 1024px) {
     .catalog-index-item {
         margin: 0px 0px 40px 0px;
@@ -117,6 +149,9 @@ $font-stack: "Montserrat", sans-serif;
         flex-direction: column;
 
         align-items: center;
+    }
+    .catalog-index-wrap {
+        flex-direction: column;
     }
     .catalog-item {
         &__wrap {
@@ -138,10 +173,13 @@ $font-stack: "Montserrat", sans-serif;
             height: auto;
         }
         &__button {
+            width: 230px;
+            height: 39px;
+
             font-size: 15px;
         }
         &__price {
-            font-size: 20px;
+            font-size: 16px;
             margin: 0px 0px 0px 0px;
         }
         &__name {
@@ -151,6 +189,9 @@ $font-stack: "Montserrat", sans-serif;
         }
         &__performance {
             font-size: 16px;
+        }
+        &__button2 {
+            font-size: 15px;
         }
     }
     .catalog-wrap {

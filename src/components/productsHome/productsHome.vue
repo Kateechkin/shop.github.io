@@ -36,7 +36,7 @@ export default {
     "$route.params.path"() {
       axios
         .get(
-          `https://a863bbb770d2.ngrok.io/api/products/${this.$route.params.path}`,
+          `https://8c585af28b90.ngrok.io/api/products/${this.$route.params.path}`,
           {}
         )
         .then((response) => {
@@ -52,7 +52,7 @@ export default {
   created() {
     axios
       .get(
-        `https://a863bbb770d2.ngrok.io/api/products/${this.$route.params.path}`,
+        `https://8c585af28b90.ngrok.io/api/products/${this.$route.params.path}`,
         {}
       )
       .then((response) => {
