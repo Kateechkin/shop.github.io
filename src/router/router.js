@@ -10,8 +10,9 @@ import Admin from '../pages/admin-index'
 import Addproduct from '../pages/addproduct'
 import Request from '../pages/request'
 import OrderReary from '../pages/order-ready'
+import Errors from '../pages/error'
 // import ProductsCompany from '../pages/productsCompanyPages'
-import ProductsHome from '../pages/productsHomePages'
+// import ProductsHome from '../pages/productsHomePages'
 
 Vue.use(Router);
 
@@ -44,15 +45,15 @@ let router = new Router({
         }
     },
 
-    {
-        path: '/:path',
-        name: 'production',
-        component: ProductsHome,
-        meta: {
-            showSearch: false,
-            showCart: true
-        }
-    },
+    // {
+    //     path: '/:path',
+    //     name: 'production',
+    //     component: ProductsHome,
+    //     meta: {
+    //         showSearch: false,
+    //         showCart: true
+    //     }
+    // },
     // {
     //     path: '/productsCompany',
     //     name: 'productsCompany',
@@ -111,6 +112,11 @@ let router = new Router({
         meta: {
             showSearch: false
         }
+    },
+    {
+        path: "/*",
+        component: Errors
+        // component: { render: (h) => h("div", ["404! Page Not Found!"]) },
     },
     {
         path: '/admin/addproduct',

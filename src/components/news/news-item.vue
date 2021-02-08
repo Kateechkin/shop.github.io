@@ -1,6 +1,6 @@
 <template>
   <figure class="news-item-block">
-    <img :src="require('../../assets/image/' + news_data.image)" alt="img" />
+    <img :src="require(`../../../public/image/` + news_data.image)" alt="img" />
     <figcaption class="news-item-block__fig">
       <h1>Заголовок</h1>
       <p class="news-item-block__text">{{ news_data.text }}</p>

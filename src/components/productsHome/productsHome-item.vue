@@ -2,7 +2,7 @@
   <div class="catalog-column">
     <figure class="catalog-index-item">
       <img
-        :src="require('../../assets/image/' + product_data.image)"
+        :src="require(`../../../public/image/` + product_data.image)"
         alt="img"
         width="243"
         height="243"

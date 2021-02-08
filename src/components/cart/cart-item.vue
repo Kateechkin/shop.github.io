@@ -1,7 +1,7 @@
 <template>
   <div class="cart-item-wrap">
     <img
-      :src="require('../../assets/image/' + cart_item_data.image)"
+      :src="require(`../../../public/image/` + cart_item_data.image)"
       alt="img"
     />
     <div class="cart-item-wrap__wrap">

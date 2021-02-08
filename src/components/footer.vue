@@ -125,7 +125,7 @@ export default {
   methods: {
     postPost() {
       axios
-        .post("https://8c585af28b90.ngrok.io/api/contacts", {
+        .post("https://08391fcc9ccd.ngrok.io/api/contacts", {
           name: this.name,
           phone: this.phone,
         })

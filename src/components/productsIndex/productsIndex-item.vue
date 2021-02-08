@@ -1,7 +1,7 @@
 <template>
   <div class="catalog-item">
     <img
-      :src="require('../../assets/image/' + product_data.image)"
+      :src="require(`../../../public/image/` + product_data.image)"
       alt="img"
       height="224"
       width="238"

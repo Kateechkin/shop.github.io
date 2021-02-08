@@ -62,7 +62,7 @@ let store = new Vuex.Store({
             commit('SET_PRODUCTION', production)
         },
         GET_PRODUCTS({ commit }) {
-            return axios('https://8c585af28b90.ngrok.io/api/index', {
+            return axios('https://08391fcc9ccd.ngrok.io/api/index', {
                 method: "GET"
             })
                 .then((products) => {
@@ -75,7 +75,7 @@ let store = new Vuex.Store({
                 })
         },
         GET_NEWS({ commit }) {
-            return axios('https://8c585af28b90.ngrok.io/api/news', {
+            return axios('https://08391fcc9ccd.ngrok.io/api/news', {
                 method: "GET"
             })
                 .then((news) => {
